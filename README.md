@@ -18,7 +18,7 @@ source devel/setup.bash
 
 ##  使用方式
 ```bash
-roslaunch 1100331_robot bringup.launch
+roslaunch 1100331_robot gazebo_slam.launch
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
 
