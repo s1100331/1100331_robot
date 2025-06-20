@@ -144,7 +144,11 @@
 
   <!-- Gazebo Plugin for Joint Controllers -->
   <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
-  </gazebo>
+  <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <leftJoint>left_wheel_joint</leftJoint>
+    <rightJoint>right_wheel_joint</rightJoint>
+    ...
+  </plugin>
+</gazebo>
 </robot>
 
