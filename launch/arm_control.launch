@@ -1,0 +1,8 @@
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro '$(find 1100331_robot)/urdf/robot.urdf'" />
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" args="shoulder_controller elbow_controller left_finger_position_controller right_finger_position_controller" />
+
+  <rosparam file="$(find 1100331_robot)/config/controller.yaml" command="load" />
+</launch>

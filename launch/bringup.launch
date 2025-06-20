@@ -1,0 +1,7 @@
+<launch>
+  <arg name="gui" default="true"/>
+  <param name="robot_description" command="$(find xacro)/xacro '$(find 1100331_robot)/urdf/robot.urdf'" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find 1100331_robot)/config/view.rviz" if="$(arg gui)" />
+</launch>

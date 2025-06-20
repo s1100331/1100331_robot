@@ -1,0 +1,19 @@
+<launch>
+  <!-- 啟動 Gazebo 環境 -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find 1100331_robot)/worlds/warehouse.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+  </include>
+
+  <!-- robot model -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(find 1100331_robot)/urdf/robot.urdf'" />
+  <node name="state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+  <!-- Spawn robot in Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model my_robot" />
+
+  <!-- 啟動 SLAM -->
+  <include file="$(find 1100331_robot)/launch/slam.launch" />
+</launch>

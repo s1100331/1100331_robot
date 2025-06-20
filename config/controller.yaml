@@ -1,0 +1,19 @@
+left_finger_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: left_finger_joint
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+
+right_finger_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: right_finger_joint
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+
+shoulder_controller:
+  type: effort_controllers/JointPositionController
+  joint: shoulder_joint
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+
+elbow_controller:
+  type: effort_controllers/JointPositionController
+  joint: elbow_joint
+  pid: {p: 100.0, i: 0.01, d: 10.0}
