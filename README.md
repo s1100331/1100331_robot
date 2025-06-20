@@ -10,7 +10,7 @@
 ##  安裝方式
 ```bash
 cd ~/catkin_ws/src
-git clone https://github.com/YOUR_USERNAME/1100331_robot.git
+git clone https://github.com/s1100331/1100331_robot.git
 cd ..
 catkin_make
 source devel/setup.bash
